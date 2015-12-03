@@ -1,7 +1,7 @@
 #pragma once
 #include "Piece.h"
 
-class BlackPiece : 
+class BlackPiece :
 	public Piece
 {
 public:

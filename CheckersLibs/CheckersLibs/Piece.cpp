@@ -2,11 +2,17 @@
 #include "Piece.h"
 
 
-Piece::Piece(void)
+Piece::Piece(int locationX, int locationY)
 {
+	_locationX = locationX;
+	_locationY = locationY;
 }
 
+short Piece::getType()
+{
+	return 0;
+}
 
-Piece::~Piece(void)
+Piece::~Piece()
 {
 }

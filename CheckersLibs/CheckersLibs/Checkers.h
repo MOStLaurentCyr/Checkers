@@ -1,6 +1,8 @@
 #pragma once
 #include "Move.h"
 #include "SelectionTree.h"
+#include "Piece.h"
+
 class Checkers
 {
 private:
@@ -18,6 +20,7 @@ private:
 
 		Node* _last;
 	};
+	void setInitialPieces();
 	[]Move* calculatePossiblesMoves();
 	Move* checkForForcedMove();
 	Move* getRightMove(int i, int j);
