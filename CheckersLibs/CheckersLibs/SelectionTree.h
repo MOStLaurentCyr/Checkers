@@ -2,22 +2,26 @@
 #include "Move.h"
 class SelectionTree
 {
-public:
-	SelectionTree(Piece* tabCheckers[10][10]);
-	~SelectionTree();
-	void add();
-private: 
+private:
 	struct Node
 	{
 	public:
-		Node(Piece* tabCheckers);
+		Node(Move* move, Node* parent);
 
-		Node* tabChild[20];
-		Node* parent;
-		Piece* situation[10][10];
+		Node* _tabChild[20];
+		Node* _parent;
+		Move* _move;
+		int nbrOfChilds;
 	};
 
-	Node* root;
+	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
 
+	Node* _root;
+
+public:
+	SelectionTree(Move* lastMove);
+	~SelectionTree();
+	void add(Move* moveToAdd, Node* parentNode);
+	void resetTree(Move* lastMove);
 };
 
