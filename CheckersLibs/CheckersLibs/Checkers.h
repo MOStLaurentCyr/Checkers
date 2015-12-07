@@ -33,6 +33,8 @@ private:
 public:
 	Checkers();
 	~Checkers();
+	int getPiecePosition(Piece selectedPiece);
+	int getFuturePiecePosition(Move futurePosition);
 	Move* getBestMove();
 	MovesList* getPossibleMoves();
 

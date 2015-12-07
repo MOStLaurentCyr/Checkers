@@ -61,6 +61,19 @@ Checkers::~Checkers(void)
 	delete[] _checkerBoard;
 }
 
+
+//Peut-etre a mettre dans c# debut
+int Checkers::getPiecePosition(Piece selectedPiece)
+{
+	return selectedPiece.getLocation();
+}
+
+int Checkers::getFuturePiecePosition(Move futurePosition)
+{
+	return futurePosition.getLocation();
+}
+//fin
+
 Move* Checkers::getBestMove()
 {
 	Move* rightMove;

@@ -8,11 +8,16 @@ Piece::Piece(int locationX, int locationY)
 	_locationY = locationY;
 }
 
+Piece::~Piece()
+{
+}
+
 short Piece::getType()
 {
 	return 0;
 }
 
-Piece::~Piece()
+int Piece::getLocation()
 {
+	return _locationX, _locationY;
 }

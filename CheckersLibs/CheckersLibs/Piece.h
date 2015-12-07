@@ -5,8 +5,9 @@ class Piece
 public:
 
 	Piece(int locationX, int locationY);
-	short getType();
 	~Piece();
+	int getLocation();
+	short getType();
 
 private:
 	int _locationX;
