@@ -10,6 +10,8 @@ SelectionTree::SelectionTree(Move* lastMove)
 
 SelectionTree::~SelectionTree()
 {
+	remove(_root);
+	delete[] _root->_tabChild;
 }
 
 void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
@@ -20,25 +22,37 @@ void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
 	}
 	else if(_root == parentNode)
 	{
-		bool nodeAdded = false;
-		for(int i = 0; i < _root->nbrOfChilds; i++)
+		//bool nodeAdded = false;
+		for(int i = 0; i < _root->_nbrOfChilds - 1; i++)
 		{
 			if(_root->_tabChild[i] == nullptr)
 			{
 				_root->_tabChild[i] = new Node(moveToAdd, _root);
-				_root->nbrOfChilds++;
-				nodeAdded = true;
+				_root->_nbrOfChilds++;
+				//nodeAdded = true;
 			}
 		}
 		
-		if(nodeAdded == false)
+		/*if(nodeAdded == false)
 		{
-			Move* temp[40];
-		}
+			//agrandir tabChild, car le tableau n<est plus assez grand
+			//operator=
+		}*/
 	}
 	else
 	{
 		addBranch(moveToAdd, 0, parentNode, _root);
+	}
+}
+
+void SelectionTree::remove(Node* node)
+{
+	int compteur = 0;
+	while(node != nullptr)
+	{
+		remove(node->_tabChild[compteur]);
+		compteur++;
+		delete node;
 	}
 }
 
