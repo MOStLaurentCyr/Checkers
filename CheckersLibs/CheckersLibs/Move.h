@@ -3,10 +3,12 @@
 class Move
 {
 public:
-	Move(int locationX, int locationY);
+	Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituation[10][10]);
 	~Move(void);
+	int getQuality();
 private:
-	int _locationX;
-	int _locationY;
+	Piece* _tabSituation[10][10];
+	int moveQuality;
+	void copyTab(Piece* tabToCopy[10][10]);
 };
 

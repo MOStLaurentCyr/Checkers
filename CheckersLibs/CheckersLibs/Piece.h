@@ -10,4 +10,3 @@ private:
 
 	short type;
 };
-
