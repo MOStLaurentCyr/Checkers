@@ -12,6 +12,7 @@ private:
 		Node* _parent;
 		Move* _move;
 		int _nbrOfChilds;
+		int getQuality();
 	};
 
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);

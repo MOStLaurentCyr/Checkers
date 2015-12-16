@@ -75,6 +75,7 @@ void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, SelectionTre
 	}
 }
 
+
 SelectionTree::Node::Node(Move* element, SelectionTree::Node* parent)
 {
 
@@ -83,19 +84,47 @@ SelectionTree::Node::Node(Move* element, SelectionTree::Node* parent)
 Move* SelectionTree::getBestMove()
 {
 	Move* bestMove = nullptr;
-	int bestScore = 0;
+	int bestMoveQuality = 0;
 	for(int i = 0; i < _root->_nbrOfChilds; i++)
 	{
 		if(bestMove == nullptr)
 		{
-			bestMove = _root->_tabChild[i]->_move;
-			bestScore = bestMove->getQuality();
+			bestMove = _root->_tabChild[i];
+			bestMoveQuality = _root->_tabChild[i]->getQuality();
 		}
-		else if(_root->_tabChild[i]->_move->getQuality() > bestScore)
+		else
 		{
-			bestMove = _root->_tabChild[i]->_move;
-			bestScore = bestMove->getQuality();
+			int currentMoveQuality = _root->_tabChild[i]->getQuality();
+
+			if(currentMoveQuality > bestMoveQuality)
+			{
+				bestMove = _root->_tabChild[i]->_move;
+				bestMoveQuality = currentMoveQuality;
+			}
 		}
 	}
 	return bestMove;
+}
+
+int SelectionTree::Node::getQuality()
+{
+	int moveQuality = 0;
+	if(_nbrOfChilds != 0)
+	{
+		int childQuality;
+		for(int j = 0; j < _nbrOfChilds; j++)
+		{
+			childQuality = _tabChild[j]->getQuality();
+			if(childQuality > moveQuality)
+			{
+				moveQuality = childQuality;
+			}
+		}
+	}
+	else
+	{
+		moveQuality = _move->getQuality();
+	}
+
+	return moveQuality;
 }
