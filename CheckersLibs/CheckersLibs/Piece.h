@@ -2,7 +2,7 @@
 class Piece
 {
 public:
-	Piece(void);
+	Piece(short type);
 	~Piece(void);
 	short getType();
 

@@ -6,7 +6,7 @@ Move::Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituati
 {
 	copyTab(tabSituation);
 	_tabSituation[moveX][moveY] = _tabSituation[locationX][locationY];
-	_tabSituation[locationX][locationY] = nullptr;
+	_tabSituation[locationX][locationY] = new Piece(0);
 	_newX = moveX;
 	_newY = moveY;
 }

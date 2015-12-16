@@ -2,7 +2,7 @@
 #include "Piece.h"
 
 
-Piece::Piece(void)
+Piece::Piece(short type)
 {
 }
 
