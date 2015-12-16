@@ -3,8 +3,6 @@
 
 Checkers::Checkers(void)
 {
-	//faire lechiquier
-	//placer les 20 pieces blanches et 20 noires sur les cases noires
 	setInitialPieces();
 }
 
@@ -90,4 +88,23 @@ Move* Checkers::getBestMove()
 			}
 		}
 	}
+}
+
+int Checkers::getNbPiecesAlive()
+{
+	int nbPiecesAlive = 0;
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			if (_checkerBoard[i][j]->getType() != 0)
+			{
+				nbPiecesAlive++;
+
+			}
+		}
+	}
+
+	return nbPiecesAlive;
 }

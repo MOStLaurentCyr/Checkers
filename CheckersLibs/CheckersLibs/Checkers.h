@@ -37,6 +37,7 @@ public:
 	int getFuturePiecePosition(Move futurePosition);
 	Move* getBestMove();
 	MovesList* getPossibleMoves();
+	int getNbPiecesAlive();
 
 
 };

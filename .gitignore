@@ -47,3 +47,5 @@ Temporary Items
 .apdisk
 *.sdf
 CheckersLibs/CheckersLibs.v11.suo
+*.suo
+CheckersLibs/ipch/checkerslibs-21a4d12a/checkerslibs-d0406d1e.ipch

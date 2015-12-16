@@ -22,22 +22,14 @@ void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
 	}
 	else if(_root == parentNode)
 	{
-		//bool nodeAdded = false;
 		for(int i = 0; i < _root->_nbrOfChilds - 1; i++)
 		{
 			if(_root->_tabChild[i] == nullptr)
 			{
 				_root->_tabChild[i] = new Node(moveToAdd, _root);
 				_root->_nbrOfChilds++;
-				//nodeAdded = true;
 			}
 		}
-		
-		/*if(nodeAdded == false)
-		{
-			//agrandir tabChild, car le tableau n<est plus assez grand
-			//operator=
-		}*/
 	}
 	else
 	{
