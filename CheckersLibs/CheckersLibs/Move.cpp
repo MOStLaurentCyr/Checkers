@@ -2,25 +2,24 @@
 #include "Move.h"
 
 
-<<<<<<< HEAD
-Move::Move(int locationX, int locationY)
-{
-	_locationX = locationX;
-	_locationY = locationY;
-=======
 Move::Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituation[10][10])
 {
 	copyTab(tabSituation);
 	_tabSituation[moveX][moveY] = _tabSituation[locationX][locationY];
+	_piece = _tabSituation[moveX][moveY];
 	_tabSituation[locationX][locationY] = new Piece(0);
 	_newX = moveX;
 	_newY = moveY;
->>>>>>> refs/remotes/origin/master
 }
 
-int Move::getLocation()
+int Move::getNewX()
 {
-	return _locationX, _locationY;
+	return _newX;
+}
+
+int Move::getNewY()
+{
+	return _newY;
 }
 
 Move::~Move(void)
