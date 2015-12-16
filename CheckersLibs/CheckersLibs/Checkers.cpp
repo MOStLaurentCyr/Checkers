@@ -74,20 +74,7 @@ int Checkers::getFuturePiecePosition(Move futurePosition)
 
 Move* Checkers::getBestMove()
 {
-	Move* rightMove;
-	Move* leftMove;
-
-	for(int i = 0; i < 10; i++)
-	{
-		for(int j = 0; j < 10; j++)
-		{
-			if(_checkerBoard[i][j]->getType() == 'n')
-			{
-				rightMove = getRightMove(i, j);
-
-			}
-		}
-	}
+	return _selectionTree->getBestMove();
 }
 
 int Checkers::getNbPiecesAlive()

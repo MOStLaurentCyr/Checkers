@@ -22,14 +22,30 @@ void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
 	}
 	else if(_root == parentNode)
 	{
+<<<<<<< HEAD
 		for(int i = 0; i < _root->_nbrOfChilds - 1; i++)
+=======
+		bool nodeAdded = false;
+		for(int i = 0; i < _root->_nbrOfChilds; i++)
+>>>>>>> refs/remotes/origin/master
 		{
 			if(_root->_tabChild[i] == nullptr)
 			{
 				_root->_tabChild[i] = new Node(moveToAdd, _root);
 				_root->_nbrOfChilds++;
+<<<<<<< HEAD
 			}
 		}
+=======
+				nodeAdded = true;
+			}
+		}
+		
+		if(nodeAdded == false)
+		{
+
+		}
+>>>>>>> refs/remotes/origin/master
 	}
 	else
 	{
@@ -37,6 +53,7 @@ void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
 	}
 }
 
+<<<<<<< HEAD
 void SelectionTree::remove(Node* node)
 {
 	int compteur = 0;
@@ -49,11 +66,91 @@ void SelectionTree::remove(Node* node)
 }
 
 void SelectionTree::addBranch(Move* moveToAdd, int index, SelectionTree::Node* nodeToFind, SelectionTree::Node* currentNode)
+=======
+void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, SelectionTree::Node* nodeToFind, SelectionTree::Node* currentNode)
+>>>>>>> refs/remotes/origin/master
 {
-
+	if(currentNode != nodeToFind)
+	{
+		if(currentNode->_tabChild[currentTabIndex] == nullptr)
+		{
+			addBranch(moveToAdd, currentTabIndex++, nodeToFind, currentNode->_parent);
+		}
+		else
+		{
+			addBranch(moveToAdd, currentTabIndex, nodeToFind, currentNode->_tabChild[currentTabIndex]);
+		}
+	}
+	else
+	{
+		bool nodeAdded = false;
+		for(int i = 0; i < _root->_nbrOfChilds; i++)
+		{
+			if(_root->_tabChild[i] == nullptr)
+			{
+				_root->_tabChild[i] = new Node(moveToAdd, _root);
+				_root->_nbrOfChilds++;
+				nodeAdded = true;
+			}
+		}
+		
+		if(nodeAdded == false)
+		{
+			
+		}
+	}
 }
+
 
 SelectionTree::Node::Node(Move* element, SelectionTree::Node* parent)
 {
 
+}
+
+Move* SelectionTree::getBestMove()
+{
+	Move* bestMove = nullptr;
+	int bestMoveQuality = 0;
+	for(int i = 0; i < _root->_nbrOfChilds; i++)
+	{
+		if(bestMove == nullptr)
+		{
+			bestMove = _root->_tabChild[i];
+			bestMoveQuality = _root->_tabChild[i]->getQuality();
+		}
+		else
+		{
+			int currentMoveQuality = _root->_tabChild[i]->getQuality();
+
+			if(currentMoveQuality > bestMoveQuality)
+			{
+				bestMove = _root->_tabChild[i]->_move;
+				bestMoveQuality = currentMoveQuality;
+			}
+		}
+	}
+	return bestMove;
+}
+
+int SelectionTree::Node::getQuality()
+{
+	int moveQuality = 0;
+	if(_nbrOfChilds != 0)
+	{
+		int childQuality;
+		for(int j = 0; j < _nbrOfChilds; j++)
+		{
+			childQuality = _tabChild[j]->getQuality();
+			if(childQuality > moveQuality)
+			{
+				moveQuality = childQuality;
+			}
+		}
+	}
+	else
+	{
+		moveQuality = _move->getQuality();
+	}
+
+	return moveQuality;
 }

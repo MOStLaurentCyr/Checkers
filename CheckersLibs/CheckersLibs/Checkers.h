@@ -20,8 +20,12 @@ private:
 
 		Node* _last;
 	};
+<<<<<<< HEAD
 	void setInitialPieces();
 	[]Move* calculatePossiblesMoves();
+=======
+	Move* calculatePossiblesMoves();
+>>>>>>> refs/remotes/origin/master
 	Move* checkForForcedMove();
 	Move* getRightMove(int i, int j);
 	Move* getLeftMove(int i, int j);

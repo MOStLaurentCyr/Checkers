@@ -12,6 +12,10 @@ private:
 		Node* _parent;
 		Move* _move;
 		int _nbrOfChilds;
+<<<<<<< HEAD
+=======
+		int getQuality();
+>>>>>>> refs/remotes/origin/master
 	};
 
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
@@ -24,6 +28,11 @@ public:
 	void add(Move* moveToAdd, Node* parentNode);
 	void remove(Node* node);
 	void resetTree(Move* lastMove);
+<<<<<<< HEAD
 
 };
 
+=======
+	Move* getBestMove();
+};
+>>>>>>> refs/remotes/origin/master
