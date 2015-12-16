@@ -1,0 +1,23 @@
+﻿La génération a démarré 14-12-15 13:34:49.
+     1>Projet "C:\Dev\GitHub\Checkers\CheckersLibs\CheckersLibs\CheckersLibs.vcxproj" sur le nœud 2 (Rebuild cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\CheckersLibs.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\CheckersLibs.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Checkers.cpp Move.cpp Piece.cpp SelectionTree.cpp
+         SelectionTree.cpp
+         Piece.cpp
+         Move.cpp
+         Checkers.cpp
+         Génération de code en cours...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Dev\GitHub\Checkers\CheckersLibs\Debug\CheckersLibs.lib" /NOLOGO Debug\Checkers.obj
+         Debug\Move.obj
+         Debug\Piece.obj
+         Debug\SelectionTree.obj
+         Debug\stdafx.obj
+         CheckersLibs.vcxproj -> C:\Dev\GitHub\Checkers\CheckersLibs\Debug\CheckersLibs.lib
+     1>Génération du projet "C:\Dev\GitHub\Checkers\CheckersLibs\CheckersLibs\CheckersLibs.vcxproj" terminée (Rebuild cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.46

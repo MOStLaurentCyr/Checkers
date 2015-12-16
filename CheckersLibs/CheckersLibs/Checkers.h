@@ -18,7 +18,7 @@ private:
 
 		Node* _last;
 	};
-	[]Move* calculatePossiblesMoves();
+	Move* calculatePossiblesMoves();
 	Move* checkForForcedMove();
 	Move* getRightMove(int i, int j);
 	Move* getLeftMove(int i, int j);

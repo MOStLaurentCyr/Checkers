@@ -11,7 +11,8 @@ private:
 		Node* _tabChild[20];
 		Node* _parent;
 		Move* _move;
-		int nbrOfChilds;
+		int _nbrOfChilds;
+		int getQuality();
 	};
 
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
@@ -23,5 +24,5 @@ public:
 	~SelectionTree();
 	void add(Move* moveToAdd, Node* parentNode);
 	void resetTree(Move* lastMove);
+	Move* getBestMove();
 };
-
