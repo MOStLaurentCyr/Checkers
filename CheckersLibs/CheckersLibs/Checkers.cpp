@@ -110,6 +110,7 @@ int Checkers::getNbPiecesAlive()
 
 void Checkers::calculatePossiblesMoves()
 {
+	int possibleMoves = 0;
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -120,10 +121,19 @@ void Checkers::calculatePossiblesMoves()
 				{
 					//Move* newMove = new Move(i, j, i - 1, j + 1, _checkerBoard[i][j]);
 					//SelectionTree().add(newMove, nullptr); nullptr = parent, donc parent = [i][j]
+					possibleMoves++;
+				}
+				else if (_checkerBoard[i - 1][j + 1]->getType() == 1 && _checkerBoard[i - 2][j + 2]->getType() == 0)
+				{
+					possibleMoves++;
 				}
 				if (_checkerBoard[i + 1][j + 1]->getType() == 0)//case bas gauche est libre
 				{
-
+					possibleMoves++;
+				}
+				else if (_checkerBoard[i + 1][j + 1]->getType() == 1 && _checkerBoard[i + 2][j + 2]->getType() == 0)
+				{
+					possibleMoves++;
 				}
 			}
 		}
