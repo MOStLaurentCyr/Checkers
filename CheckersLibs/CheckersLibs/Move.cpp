@@ -7,13 +7,10 @@ Move::Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituati
 	Piece* temp;
 	copyTab(tabSituation);
 	_tabSituation[moveX][moveY] = _tabSituation[locationX][locationY];
-<<<<<<< HEAD
 	_piece = _tabSituation[moveX][moveY];
 	_tabSituation[locationX][locationY] = new Piece(0);
-=======
 	temp = _tabSituation[locationX][locationY];
 	_tabSituation[locationX][locationY] = temp;
->>>>>>> refs/remotes/origin/master
 	_newX = moveX;
 	_newY = moveY;
 	_innitialX = locationX;
@@ -60,5 +57,5 @@ int Move::getNewX()
 
 int Move::getNewY()
 {
-	return Y;
+	return _newY;
 }

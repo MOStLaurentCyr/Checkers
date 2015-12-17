@@ -25,12 +25,10 @@ public:
 	//int getPiecePosition(Piece selectedPiece);
 	//int getFuturePiecePosition(Move futurePosition);
 	Move* getBestMove();
-<<<<<<< HEAD
+
 	int getNbPiecesAlive();
-=======
-	MovesList* getPossibleMoves();
+
 	void move(int locationX, int locationY, int moveX, int moveY);
->>>>>>> refs/remotes/origin/master
 
 
 };

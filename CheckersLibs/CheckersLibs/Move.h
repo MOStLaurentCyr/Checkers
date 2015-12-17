@@ -1,11 +1,8 @@
 #pragma once
 #include "Piece.h"
-<<<<<<< HEAD
-
-=======
 #include <string>
 using namespace std;
->>>>>>> refs/remotes/origin/master
+
 class Move
 {
 public:
@@ -14,11 +11,9 @@ public:
 	int getQuality();
 	int getNewX();
 	int getNewY();
-<<<<<<< HEAD
 
-=======
 	string toString(); // for terminal display
->>>>>>> refs/remotes/origin/master
+
 private:
 	Piece* _tabSituation[10][10];
 	int _moveQuality;
