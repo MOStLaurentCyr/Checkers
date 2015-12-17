@@ -71,13 +71,11 @@ void SelectionTree::resetTree(int x, int y)
 
 void SelectionTree::cleanTree(int i, SelectionTree::Node* parent)
 {
-	while(parent->_nbrOfChilds != 0)
+	for(int j = 0; j < parent->_nbrOfChilds; j++)
 	{
-		for(int j = 0; j < parent->_nbrOfChilds; j++)
-		{
-			cleanTree(j, parent->_tabChild[j]);
-		}
+		cleanTree(j, parent->_tabChild[j]);
 	}
+	
 	delete parent;
 }
 

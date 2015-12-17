@@ -1,4 +1,4 @@
-﻿La génération a démarré 14-12-15 13:34:49.
+﻿La génération a démarré 17-12-15 15:05:57.
      1>Projet "C:\Dev\GitHub\Checkers\CheckersLibs\CheckersLibs\CheckersLibs.vcxproj" sur le nœud 2 (Rebuild cible(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\CheckersLibs.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
@@ -20,4 +20,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.46
+Temps écoulé 00:00:02.03
