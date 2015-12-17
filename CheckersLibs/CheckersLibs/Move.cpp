@@ -7,6 +7,8 @@ Move::Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituati
 	Piece* temp;
 	copyTab(tabSituation);
 	_tabSituation[moveX][moveY] = _tabSituation[locationX][locationY];
+	_piece = _tabSituation[moveX][moveY];
+	_tabSituation[locationX][locationY] = new Piece(0);
 	temp = _tabSituation[locationX][locationY];
 	_tabSituation[locationX][locationY] = temp;
 	_newX = moveX;
@@ -15,6 +17,15 @@ Move::Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituati
 	_innitialY = locationY;
 }
 
+int Move::getNewX()
+{
+	return _newX;
+}
+
+int Move::getNewY()
+{
+	return _newY;
+}
 
 Move::~Move(void)
 {
@@ -46,5 +57,5 @@ int Move::getNewX()
 
 int Move::getNewY()
 {
-	return Y;
+	return _newY;
 }

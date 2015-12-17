@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Piece">
+      <UniqueIdentifier>{6fa5fba8-3b89-4a9e-bd10-55a9fe938166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Piece">
+      <UniqueIdentifier>{16c4c9e3-75b9-4714-82b6-2d60cdcd66e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -34,7 +40,7 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Piece.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Piece</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +57,7 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Piece.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Piece</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

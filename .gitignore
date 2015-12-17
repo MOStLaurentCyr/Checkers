@@ -47,6 +47,14 @@ Temporary Items
 .apdisk
 *.sdf
 CheckersLibs/CheckersLibs.v11.suo
+<<<<<<< HEAD
+*.suo
+CheckersLibs/ipch/checkerslibs-21a4d12a/checkerslibs-d0406d1e.ipch
+=======
 CheckersLibs/CheckersLibs.sdf
 CheckersLibs/CheckersLibs.v12.suo
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
 CheckersLibs/CheckersLibs.opensdf
+>>>>>>> refs/remotes/origin/master

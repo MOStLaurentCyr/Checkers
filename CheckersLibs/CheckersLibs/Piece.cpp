@@ -2,11 +2,17 @@
 #include "Piece.h"
 
 
+
 Piece::Piece(short type)
+{
+	_type = type;
+}
+
+Piece::~Piece()
 {
 }
 
-
-Piece::~Piece(void)
+short Piece::getType()
 {
+	return _type;
 }

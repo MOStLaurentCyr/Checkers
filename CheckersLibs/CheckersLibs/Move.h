@@ -2,6 +2,7 @@
 #include "Piece.h"
 #include <string>
 using namespace std;
+
 class Move
 {
 public:
@@ -10,7 +11,9 @@ public:
 	int getQuality();
 	int getNewX();
 	int getNewY();
+
 	string toString(); // for terminal display
+
 private:
 	Piece* _tabSituation[10][10];
 	int _moveQuality;
@@ -19,5 +22,6 @@ private:
 	int _innitialX; // for terminal display
 	int _innitialY; // for terminal display
 	void copyTab(Piece* tabToCopy[10][10]);
+	Piece* _piece;
 };
 

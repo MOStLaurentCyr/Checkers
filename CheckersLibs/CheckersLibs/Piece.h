@@ -1,4 +1,5 @@
 #pragma once
+
 class Piece
 {
 public:
@@ -7,6 +8,5 @@ public:
 	short getType();
 
 private:
-
-	short type;
+	short _type;
 };
