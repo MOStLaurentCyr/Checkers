@@ -23,6 +23,7 @@ public:
 	SelectionTree(Move* lastMove);
 	~SelectionTree();
 	void add(Move* moveToAdd, Node* parentNode);
-	void resetTree(Move* lastMove);
+	void resetTree(int x, int y);
 	Move* getBestMove();
+	void cleanTree(int i, Node* parent);
 };

@@ -4,11 +4,15 @@
 
 Move::Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituation[10][10])
 {
+	Piece* temp;
 	copyTab(tabSituation);
 	_tabSituation[moveX][moveY] = _tabSituation[locationX][locationY];
-	_tabSituation[locationX][locationY] = new Piece(0);
+	temp = _tabSituation[locationX][locationY];
+	_tabSituation[locationX][locationY] = temp;
 	_newX = moveX;
 	_newY = moveY;
+	_innitialX = locationX;
+	_innitialY = locationY;
 }
 
 
@@ -25,4 +29,22 @@ void Move::copyTab(Piece* tabToCopy[10][10])
 			_tabSituation[i][j] = tabToCopy[i][j];
 		}
 	}
+}
+
+string Move::toString()
+{
+	string moveString = _innitialX + ", " + _innitialY;
+	moveString = moveString + " to ";
+	moveString = moveString + (char) _newX + ", " + (char) _newY;
+	return moveString;
+}
+
+int Move::getNewX()
+{
+	return _newX;
+}
+
+int Move::getNewY()
+{
+	return Y;
 }

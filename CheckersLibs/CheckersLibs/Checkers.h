@@ -22,6 +22,7 @@ private:
 	Move* checkForForcedMove();
 	Move* getRightMove(int i, int j);
 	Move* getLeftMove(int i, int j);
+	void moveDone(int x, int y);
 
 	MovesList _posibleMove;
 	SelectionTree* _selectionTree;
@@ -32,6 +33,7 @@ public:
 	~Checkers();
 	Move* getBestMove();
 	MovesList* getPossibleMoves();
+	void move(int locationX, int locationY, int moveX, int moveY);
 
 
 };
