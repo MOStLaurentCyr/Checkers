@@ -23,7 +23,14 @@ public:
 	SelectionTree(Move* lastMove);
 	~SelectionTree();
 	void add(Move* moveToAdd, Node* parentNode);
+<<<<<<< HEAD
 	void remove(Node* node);
 	void resetTree(Move* lastMove);
 	Move* getBestMove();
 };
+=======
+	void resetTree(int x, int y);
+	Move* getBestMove();
+	void cleanTree(int i, Node* parent);
+};
+>>>>>>> refs/remotes/origin/master

@@ -89,6 +89,7 @@ Move* Checkers::getBestMove()
 	return _selectionTree->getBestMove();
 }
 
+<<<<<<< HEAD
 int Checkers::getNbPiecesAlive()
 {
 	int nbPiecesAlive = 0;
@@ -139,3 +140,13 @@ void Checkers::calculatePossiblesMoves()
 		}
 	}
 }
+=======
+void Checkers::move(int locationX, int locationY, int moveX, int moveY)
+{
+	Piece* temp = _checkerBoard[moveX][moveY];
+	_checkerBoard[moveX][moveY] = _checkerBoard[locationX][locationY];
+	_checkerBoard[locationX][locationY] = temp;
+}
+
+
+>>>>>>> refs/remotes/origin/master
