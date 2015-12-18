@@ -25,6 +25,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	Checkers checkers = Checkers();
 	checkers.move(locationX, locationY, moveX, moveY);
 	Move* bestMove = checkers.getBestMove();
-	cout << "The best move is: " << bestMove.toString();
+	cout << "The best move is: " << bestMove->toString();
 }
 

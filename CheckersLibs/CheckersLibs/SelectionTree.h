@@ -9,7 +9,6 @@ private:
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
 	void cleanTree(int i, Node* parent);
 	void remove(Node* node);
-	void cleanTree(int i, Node* parent);
 	Node* _root;
 
 public:

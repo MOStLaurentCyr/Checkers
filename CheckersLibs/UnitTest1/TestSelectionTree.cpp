@@ -32,8 +32,8 @@ namespace UnitTest1
 			tab[2][1] = new Piece(WHITE_TYPE);
 			tab[3][2] = new Piece(WHITE_TYPE);
 
-			SelectionTree* tree = new SelectionTree(new Move(0, 0, 0, 0, tab));
-			Move* move = new Move(1, 0, 2, 1, tab);
+			SelectionTree* tree = new SelectionTree(new Move(0, 0, 0, 0, new S_checkerBoard(tab)));
+			Move* move = new Move(1, 0, 2, 1, new S_checkerBoard(tab));
 
 			//Act
 			tree->add(move, tree->getRoot());
@@ -64,9 +64,9 @@ namespace UnitTest1
 			tab[2][1] = new Piece(WHITE_TYPE);
 			tab[3][2] = new Piece(WHITE_TYPE);
 
-			SelectionTree* tree = new SelectionTree(new Move(0, 0, 0, 0, tab));
-			Move* moveToRight= new Move(1, 0, 2, 1, tab);
-			Move* moveToLeft = new Move(1, 0, 0, 1, tab);
+			SelectionTree* tree = new SelectionTree(new Move(0, 0, 0, 0, new S_checkerBoard(tab)));
+			Move* moveToRight= new Move(1, 0, 2, 1,new S_checkerBoard(tab));
+			Move* moveToLeft = new Move(1, 0, 0, 1, new S_checkerBoard(tab));
 
 			//Act
 			tree->add(moveToRight, tree->getRoot());
@@ -118,7 +118,7 @@ namespace UnitTest1
 			checkerBoard->calculatePossiblesMoves();
 			NB_CHILD_BEFORE_CLEANING_TREE = tree->getRoot()->_nbrOfChilds;
 			tree->getBestMove();
-			tree->resetTree(tree->getBestMove()->getNewX, tree->getBestMove()->getNewY);
+			tree->resetTree(tree->getBestMove()->getNewX(), tree->getBestMove()->getNewY());
 			NB_CHILD_AFTER_CLEANING_TREE = tree->getRoot()->_nbrOfChilds;
 
 			//Assert

@@ -10,7 +10,7 @@ private:
 
 	void setInitialBoard();
 	void setInitialPieces();
-	void setNewPossibleMove(int locX, int locY, int moveX, int moveY, Piece* checkerBoard[10][10]);
+	void setNewPossibleMove(int locX, int locY, int moveX, int moveY, S_checkerBoard* checkerBoard);
 	
 	Move* checkForForcedMove();
 	Move* getRightMove(int i, int j);

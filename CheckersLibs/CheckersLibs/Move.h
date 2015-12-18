@@ -1,12 +1,13 @@
 #pragma once
 #include "Piece.h"
 #include <string>
+#include "S_checkerBoard.h"
 using namespace std;
 
 class Move
 {
 public:
-	Move(int locationX, int locationY, int moveX, int moveY, Piece* tabSituation[10][10]);
+	Move(int locationX, int locationY, int moveX, int moveY, S_checkerBoard* tabSituation);
 	~Move(void);
 	int getQuality();
 	int getNewX();
@@ -15,13 +16,13 @@ public:
 	string toString(); // for terminal display
 
 private:
-	Piece* _tabSituation[10][10];
+	S_checkerBoard* _tabSituation;
 	int _moveQuality;
 	int _newX;
 	int _newY;
 	int _innitialX; // for terminal display
 	int _innitialY; // for terminal display
-	void copyTab(Piece* tabToCopy[10][10]);
+	void copyTab(S_checkerBoard* tabToCopy);
 	Piece* _piece;
 };
 
