@@ -134,6 +134,7 @@ void Checkers::move(int locationX, int locationY, int moveX, int moveY)
 	_checkerBoard[locationX][locationY] = temp;
 }
 
+<<<<<<< HEAD
 void Checkers::setNewMove(int locX, int locY, int moveX, int moveY, Piece* checkerBoard[10][10])
 {
 	Move* newMove = new Move(locX, locY, moveX, moveY, checkerBoard);
@@ -145,3 +146,9 @@ Piece **Checkers::getCheckerBoard()
 	return _checkerBoard;
 }
 
+=======
+Piece*[][10] Checkers::getTab()
+{
+	return _checkerBoard;
+}
+>>>>>>> refs/remotes/origin/master

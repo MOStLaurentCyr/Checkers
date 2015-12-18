@@ -21,3 +21,7 @@ public:
 	Node* getRoot();
 };
 
+Piece** Checkers::getTab()
+{
+	return _
+}
