@@ -1,19 +1,10 @@
 #pragma once
 #include "Move.h"
+#include "Node.h"
 class SelectionTree
 {
 private:
-	struct Node
-	{
-	public:
-		Node(Move* move, Node* parent);
-
-		Node* _tabChild[20];
-		Node* _parent;
-		Move* _move;
-		int _nbrOfChilds;
-		int getQuality();
-	};
+	
 
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
 

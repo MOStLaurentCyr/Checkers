@@ -14,7 +14,7 @@ SelectionTree::~SelectionTree()
 	delete[] _root->_tabChild;
 }
 
-void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
+void SelectionTree::add(Move* moveToAdd, Node* parentNode)
 {
 	if(_root == nullptr)
 	{
@@ -69,7 +69,7 @@ void SelectionTree::resetTree(int x, int y)
 	delete temp;
 }
 
-void SelectionTree::cleanTree(int i, SelectionTree::Node* parent)
+void SelectionTree::cleanTree(int i, Node* parent)
 {
 	for(int j = 0; j < parent->_nbrOfChilds; j++)
 	{
@@ -79,7 +79,7 @@ void SelectionTree::cleanTree(int i, SelectionTree::Node* parent)
 	delete parent;
 }
 
-void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, SelectionTree::Node* nodeToFind, SelectionTree::Node* currentNode)
+void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* currentNode)
 {
 	if(currentNode != nodeToFind)
 	{
@@ -106,7 +106,7 @@ void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, SelectionTre
 }
 
 
-SelectionTree::Node::Node(Move* element, SelectionTree::Node* parent)
+Node::Node(Move* element, SelectionTree::Node* parent)
 {
 
 }
