@@ -21,3 +21,7 @@ public:
 	void cleanTree(int i, Node* parent);
 };
 
+Piece** Checkers::getTab()
+{
+	return _
+}

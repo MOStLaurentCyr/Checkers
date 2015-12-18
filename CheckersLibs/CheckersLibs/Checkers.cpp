@@ -147,3 +147,7 @@ void Checkers::move(int locationX, int locationY, int moveX, int moveY)
 	_checkerBoard[locationX][locationY] = temp;
 }
 
+Piece*[][10] Checkers::getTab()
+{
+	return _checkerBoard;
+}
