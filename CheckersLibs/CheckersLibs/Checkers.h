@@ -2,6 +2,7 @@
 #include "Move.h"
 #include "SelectionTree.h"
 #include "Piece.h"
+#include "S_checkerBoard.h"
 
 class Checkers
 {
@@ -17,7 +18,7 @@ private:
 	void moveDone(int x, int y);
 
 	SelectionTree* _selectionTree;
-	s_checkerBoard _checkerBoard;
+	S_checkerBoard* _checkerBoard;
 	
 public:
 	Checkers();
@@ -29,7 +30,7 @@ public:
 	int getNbPiecesAlive();
 
 	void move(int locationX, int locationY, int moveX, int moveY);
-	Piece*** getTab();
+	S_checkerBoard* getTab();
 
 
 };

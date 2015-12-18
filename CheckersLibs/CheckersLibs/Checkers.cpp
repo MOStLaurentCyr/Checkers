@@ -68,7 +68,7 @@ void Checkers::setInitialPieces()
 
 Checkers::~Checkers(void)
 {
-	delete[] _checkerBoard;
+	delete _checkerBoard;
 }
 
 
@@ -147,7 +147,7 @@ void Checkers::move(int locationX, int locationY, int moveX, int moveY)
 	_checkerBoard[locationX][locationY] = temp;
 }
 
-Piece*[][10] Checkers::getTab()
+S_checkerBoard* Checkers::getTab()
 {
 	return _checkerBoard;
 }
