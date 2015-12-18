@@ -107,19 +107,19 @@ void Checkers::calculatePossiblesMoves()
 			{
 				if (_checkerBoard[i - 1][j + 1]->getType() == 0)//case bas droite est libre
 				{
-					setNewMove(i, j, i - 1, j + 1, _checkerBoard);
+					setNewPossibleMove(i, j, i - 1, j + 1, _checkerBoard);
 				}
 				else if (_checkerBoard[i - 1][j + 1]->getType() == 1 && _checkerBoard[i - 2][j + 2]->getType() == 0)
 				{
-					setNewMove(i, j, i - 2, j + 2, _checkerBoard);
+					setNewPossibleMove(i, j, i - 2, j + 2, _checkerBoard);
 				}
 				if (_checkerBoard[i + 1][j + 1]->getType() == 0)//case bas gauche est libre
 				{
-					setNewMove(i, j, i + 1, j + 1, _checkerBoard);
+					setNewPossibleMove(i, j, i + 1, j + 1, _checkerBoard);
 				}
 				else if (_checkerBoard[i + 1][j + 1]->getType() == 1 && _checkerBoard[i + 2][j + 2]->getType() == 0)
 				{
-					setNewMove(i, j, i + 2, j + 2, _checkerBoard);
+					setNewPossibleMove(i, j, i + 2, j + 2, _checkerBoard);
 				}
 				possibleMoves++;
 			}
@@ -134,21 +134,14 @@ void Checkers::move(int locationX, int locationY, int moveX, int moveY)
 	_checkerBoard[locationX][locationY] = temp;
 }
 
-<<<<<<< HEAD
-void Checkers::setNewMove(int locX, int locY, int moveX, int moveY, Piece* checkerBoard[10][10])
+void Checkers::setNewPossibleMove(int locX, int locY, int moveX, int moveY, Piece* checkerBoard[10][10])
 {
 	Move* newMove = new Move(locX, locY, moveX, moveY, checkerBoard);
 	_selectionTree->add(newMove, _selectionTree->getRoot());
 }
 
-Piece **Checkers::getCheckerBoard()
-{
-	return _checkerBoard;
-}
-
-=======
 Piece*[][10] Checkers::getTab()
 {
 	return _checkerBoard;
 }
->>>>>>> refs/remotes/origin/master
+

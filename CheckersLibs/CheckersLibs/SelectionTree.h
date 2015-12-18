@@ -20,8 +20,3 @@ public:
 	Move* getBestMove();
 	Node* getRoot();
 };
-
-Piece** Checkers::getTab()
-{
-	return _
-}
