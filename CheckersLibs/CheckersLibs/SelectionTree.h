@@ -18,10 +18,5 @@ public:
 	void add(Move* moveToAdd, Node* parentNode);
 	void resetTree(int x, int y);
 	Move* getBestMove();
-<<<<<<< HEAD
-	void cleanTree(int i, Node* parent);
-};
-=======
 	Node* getRoot();
 };
->>>>>>> refs/remotes/origin/Ced

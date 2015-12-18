@@ -18,11 +18,7 @@ private:
 	void moveDone(int x, int y);
 
 	SelectionTree* _selectionTree;
-<<<<<<< HEAD
 	S_checkerBoard* _checkerBoard;
-=======
-	S_checkerBoard _checkerBoard;
->>>>>>> refs/remotes/origin/Ced
 	
 public:
 	Checkers();
