@@ -69,7 +69,7 @@ void Checkers::setInitialPieces()
 
 Checkers::~Checkers(void)
 {
-	delete[] _checkerBoard;
+	delete _checkerBoard;
 }
 
 Move* Checkers::getBestMove()
@@ -140,8 +140,7 @@ void Checkers::setNewPossibleMove(int locX, int locY, int moveX, int moveY, Piec
 	_selectionTree->add(newMove, _selectionTree->getRoot());
 }
 
-Piece*[][10] Checkers::getTab()
+S_checkerBoard* Checkers::getTab()
 {
 	return _checkerBoard;
 }
-

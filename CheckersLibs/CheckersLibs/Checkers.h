@@ -18,7 +18,7 @@ private:
 	void moveDone(int x, int y);
 
 	SelectionTree* _selectionTree;
-	S_checkerBoard _checkerBoard;
+	S_checkerBoard* _checkerBoard;
 	
 public:
 	Checkers();
@@ -29,7 +29,7 @@ public:
 	int getNbPiecesAlive();
 
 	void move(int locationX, int locationY, int moveX, int moveY);
-	Piece*** getTab();
+	S_checkerBoard* getTab();
 
 
 };

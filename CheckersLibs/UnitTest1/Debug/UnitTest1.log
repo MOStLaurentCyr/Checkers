@@ -1,8 +1,19 @@
-﻿La génération a démarré 2015-12-18 10:12:40.
-     1>Projet "C:\Users\Cedric\Documents\Cegep\Session 5\Structures de données\TP3_Github\Checkers\CheckersLibs\UnitTest1\UnitTest1.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for Visual Studio 2012 (Platform Toolset = 'v110') cannot be found. To build using the v110 build tools, please install Visual Studio 2012 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
-     1>Génération du projet "C:\Users\Cedric\Documents\Cegep\Session 5\Structures de données\TP3_Github\Checkers\CheckersLibs\UnitTest1\UnitTest1.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
+﻿La génération a démarré 14-12-15 13:34:49.
+     1>Projet "C:\Dev\GitHub\Checkers\CheckersLibs\UnitTest1\UnitTest1.vcxproj" sur le nœud 2 (Rebuild cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\UnitTest\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\TestCheckersLibs.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /FC /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\UnitTest\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\TestCheckersLibs.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /FC /errorReport:prompt TestSelectionTree.cpp
+         TestSelectionTree.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Dev\GitHub\Checkers\CheckersLibs\Debug\TestCheckersLibs.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\UnitTest\lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Dev\GitHub\Checkers\CheckersLibs\Debug\TestCheckersLibs.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Dev\GitHub\Checkers\CheckersLibs\Debug\TestCheckersLibs.lib" /MACHINE:X86 /DLL Debug\stdafx.obj
+         Debug\TestSelectionTree.obj
+         C:\Dev\GitHub\Checkers\CheckersLibs\Debug\CheckersLibs.lib
+            Création de la bibliothèque C:\Dev\GitHub\Checkers\CheckersLibs\Debug\TestCheckersLibs.lib et de l'objet C:\Dev\GitHub\Checkers\CheckersLibs\Debug\TestCheckersLibs.exp
+     1>CheckersLibs.lib(SelectionTree.obj) : error LNK2019: symbole externe non résolu "public: int __thiscall Move::getQuality(void)" (?getQuality@Move@@QAEHXZ) référencé dans la fonction "public: class Move * __thiscall SelectionTree::getBestMove(void)" (?getBestMove@SelectionTree@@QAEPAVMove@@XZ)
+     1>C:\Dev\GitHub\Checkers\CheckersLibs\Debug\TestCheckersLibs.dll : fatal error LNK1120: 1 externes non résolus
+     1>Génération du projet "C:\Dev\GitHub\Checkers\CheckersLibs\UnitTest1\UnitTest1.vcxproj" terminée (Rebuild cible(s)) -- ÉCHEC.
 
 ÉCHEC de la build.
 
-Temps écoulé 00:00:00.02
+Temps écoulé 00:00:01.12
