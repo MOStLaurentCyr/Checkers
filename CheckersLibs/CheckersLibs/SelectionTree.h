@@ -1,11 +1,11 @@
 #pragma once
 #include "Move.h"
 #include "Node.h"
+
 class SelectionTree
 {
 private:
 	
-
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
 	void remove(Node* node);
 	void cleanTree(int i, Node* parent);

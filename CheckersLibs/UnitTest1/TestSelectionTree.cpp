@@ -10,18 +10,6 @@ namespace UnitTest1
 	TEST_CLASS(TestSelectionTree)
 	{
 	public:
-		
-		TEST_METHOD(SelectionTreeTest)
-		{
-			short TYPE_ZERO = 0;
-			Piece* tab[10][10];
-<<<<<<< HEAD
-			tab[0][0] = new Piece(TYPE_ZERO);
-=======
-			tab[0][0] = new Piece((short) 1);
->>>>>>> refs/remotes/origin/master
-			SelectionTree* selectionTree = new SelectionTree(new Move(0,0,0,0, tab));
-		}
 
 		TEST_METHOD(_root_from_add_is_equal_to_parent) // a tester addbranch, clean, remove, getbestmove, getquality
 		{

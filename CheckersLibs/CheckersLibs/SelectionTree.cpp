@@ -33,7 +33,7 @@ void SelectionTree::add(Move* moveToAdd, Node* parentNode)
 	}
 }
 
-SelectionTree::Node* SelectionTree::getRoot()
+Node* SelectionTree::getRoot()
 {
 	return _root;
 }
@@ -106,15 +106,6 @@ void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeTo
 	}
 }
 
-<<<<<<< HEAD
-=======
-
-Node::Node(Move* element, SelectionTree::Node* parent)
-{
-
-}
-
->>>>>>> refs/remotes/origin/master
 Move* SelectionTree::getBestMove()
 {
 	Move* bestMove = nullptr;
@@ -140,7 +131,7 @@ Move* SelectionTree::getBestMove()
 	return bestMove;
 }
 
-int SelectionTree::Node::getQuality()
+/*int SelectionTree::getQuality()
 {
 	int moveQuality = 0;
 	if(_nbrOfChilds != 0)
@@ -161,4 +152,4 @@ int SelectionTree::Node::getQuality()
 	}
 
 	return moveQuality;
-}
+}*/
