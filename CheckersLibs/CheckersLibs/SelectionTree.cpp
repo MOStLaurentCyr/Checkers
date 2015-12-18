@@ -16,11 +16,7 @@ SelectionTree::~SelectionTree()
 
 void SelectionTree::add(Move* moveToAdd, Node* parentNode)
 {
-	if(_root == nullptr)
-	{
-		_root = new Node(moveToAdd, nullptr);
-	}
-	else if(_root == parentNode)
+	if(_root == parentNode)
 	{
 		for(int i = 0; i < _root->_nbrOfChilds - 1; i++)
 		{
@@ -36,6 +32,12 @@ void SelectionTree::add(Move* moveToAdd, Node* parentNode)
 		addBranch(moveToAdd, 0, parentNode, _root);
 	}
 }
+
+Node* SelectionTree::getRoot()
+{
+	return _root;
+}
+
 
 void SelectionTree::remove(Node* node)
 {

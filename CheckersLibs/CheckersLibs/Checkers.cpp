@@ -63,6 +63,7 @@ void Checkers::setInitialPieces()
 	_checkerBoard[8][9] = new Piece(1);
 	_checkerBoard[9][6] = new Piece(1);
 	_checkerBoard[9][8] = new Piece(1);
+	_selectionTree = new SelectionTree(new Move(0,0,0,0,_checkerBoard));
 }
 
 
@@ -70,19 +71,6 @@ Checkers::~Checkers(void)
 {
 	delete _checkerBoard;
 }
-
-
-/*Peut-etre a mettre dans c# debut
-int Checkers::getPiecePosition(Piece selectedPiece)
-{
-	return selectedPiece.getLocation();
-}
-
-int Checkers::getFuturePiecePosition(Move futurePosition)
-{
-	return futurePosition.getLocation();
-}
-fin*/
 
 Move* Checkers::getBestMove()
 {
@@ -119,22 +107,21 @@ void Checkers::calculatePossiblesMoves()
 			{
 				if (_checkerBoard[i - 1][j + 1]->getType() == 0)//case bas droite est libre
 				{
-					//Move* newMove = new Move(i, j, i - 1, j + 1, _checkerBoard[i][j]);
-					//SelectionTree().add(newMove, nullptr); nullptr = parent, donc parent = [i][j]
-					possibleMoves++;
+					setNewPossibleMove(i, j, i - 1, j + 1, _checkerBoard);
 				}
 				else if (_checkerBoard[i - 1][j + 1]->getType() == 1 && _checkerBoard[i - 2][j + 2]->getType() == 0)
 				{
-					possibleMoves++;
+					setNewPossibleMove(i, j, i - 2, j + 2, _checkerBoard);
 				}
 				if (_checkerBoard[i + 1][j + 1]->getType() == 0)//case bas gauche est libre
 				{
-					possibleMoves++;
+					setNewPossibleMove(i, j, i + 1, j + 1, _checkerBoard);
 				}
 				else if (_checkerBoard[i + 1][j + 1]->getType() == 1 && _checkerBoard[i + 2][j + 2]->getType() == 0)
 				{
-					possibleMoves++;
+					setNewPossibleMove(i, j, i + 2, j + 2, _checkerBoard);
 				}
+				possibleMoves++;
 			}
 		}
 	}
@@ -145,6 +132,12 @@ void Checkers::move(int locationX, int locationY, int moveX, int moveY)
 	Piece* temp = _checkerBoard[moveX][moveY];
 	_checkerBoard[moveX][moveY] = _checkerBoard[locationX][locationY];
 	_checkerBoard[locationX][locationY] = temp;
+}
+
+void Checkers::setNewPossibleMove(int locX, int locY, int moveX, int moveY, Piece* checkerBoard[10][10])
+{
+	Move* newMove = new Move(locX, locY, moveX, moveY, checkerBoard);
+	_selectionTree->add(newMove, _selectionTree->getRoot());
 }
 
 S_checkerBoard* Checkers::getTab()

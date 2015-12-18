@@ -10,7 +10,7 @@ private:
 
 	void setInitialBoard();
 	void setInitialPieces();
-	void calculatePossiblesMoves();
+	void setNewPossibleMove(int locX, int locY, int moveX, int moveY, Piece* checkerBoard[10][10]);
 	
 	Move* checkForForcedMove();
 	Move* getRightMove(int i, int j);
@@ -23,10 +23,9 @@ private:
 public:
 	Checkers();
 	~Checkers();
-	//int getPiecePosition(Piece selectedPiece);
-	//int getFuturePiecePosition(Move futurePosition);
+	void calculatePossiblesMoves();
 	Move* getBestMove();
-
+	Piece ** getCheckerBoard();
 	int getNbPiecesAlive();
 
 	void move(int locationX, int locationY, int moveX, int moveY);
