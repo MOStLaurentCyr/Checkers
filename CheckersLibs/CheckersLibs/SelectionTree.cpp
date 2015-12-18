@@ -37,7 +37,6 @@ void SelectionTree::add(Move* moveToAdd, Node* parentNode)
 	}
 }
 
-
 void SelectionTree::remove(Node* node)
 {
 	int compteur = 0;
@@ -48,7 +47,6 @@ void SelectionTree::remove(Node* node)
 		delete node;
 	}
 }
-
 
 void SelectionTree::resetTree(int x, int y)
 {
@@ -105,12 +103,6 @@ void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeTo
 	}
 }
 
-
-Node::Node(Move* element, SelectionTree::Node* parent)
-{
-
-}
-
 Move* SelectionTree::getBestMove()
 {
 	Move* bestMove = nullptr;
@@ -134,27 +126,4 @@ Move* SelectionTree::getBestMove()
 		}
 	}
 	return bestMove;
-}
-
-int SelectionTree::Node::getQuality()
-{
-	int moveQuality = 0;
-	if(_nbrOfChilds != 0)
-	{
-		int childQuality;
-		for(int j = 0; j < _nbrOfChilds; j++)
-		{
-			childQuality = _tabChild[j]->getQuality();
-			if(childQuality > moveQuality)
-			{
-				moveQuality = childQuality;
-			}
-		}
-	}
-	else
-	{
-		moveQuality = _move->getQuality();
-	}
-
-	return moveQuality;
 }

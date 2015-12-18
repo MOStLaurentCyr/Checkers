@@ -7,6 +7,7 @@ private:
 	
 
 	void addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* actualNode);
+	void cleanTree(int i, Node* parent);
 
 	Node* _root;
 
@@ -18,5 +19,4 @@ public:
 	void remove(Node* node);
 	void resetTree(int x, int y);
 	Move* getBestMove();
-	void cleanTree(int i, Node* parent);
 };
