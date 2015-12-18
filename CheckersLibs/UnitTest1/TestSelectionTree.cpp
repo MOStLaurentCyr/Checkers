@@ -15,7 +15,11 @@ namespace UnitTest1
 		{
 			short TYPE_ZERO = 0;
 			Piece* tab[10][10];
+<<<<<<< HEAD
 			tab[0][0] = new Piece(TYPE_ZERO);
+=======
+			tab[0][0] = new Piece((short) 1);
+>>>>>>> refs/remotes/origin/master
 			SelectionTree* selectionTree = new SelectionTree(new Move(0,0,0,0, tab));
 		}
 

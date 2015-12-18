@@ -14,7 +14,7 @@ SelectionTree::~SelectionTree()
 	delete[] _root->_tabChild;
 }
 
-void SelectionTree::add(Move* moveToAdd, SelectionTree::Node* parentNode)
+void SelectionTree::add(Move* moveToAdd, Node* parentNode)
 {
 	if(_root == parentNode)
 	{
@@ -70,19 +70,17 @@ void SelectionTree::resetTree(int x, int y)
 	delete temp;
 }
 
-void SelectionTree::cleanTree(int i, SelectionTree::Node* parent)
+void SelectionTree::cleanTree(int i, Node* parent)
 {
-	while(parent->_nbrOfChilds != 0)
+	for(int j = 0; j < parent->_nbrOfChilds; j++)
 	{
-		for(int j = 0; j < parent->_nbrOfChilds; j++)
-		{
-			cleanTree(j, parent->_tabChild[j]);
-		}
+		cleanTree(j, parent->_tabChild[j]);
 	}
+	
 	delete parent;
 }
 
-void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, SelectionTree::Node* nodeToFind, SelectionTree::Node* currentNode)
+void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, Node* nodeToFind, Node* currentNode)
 {
 	if(currentNode != nodeToFind)
 	{
@@ -108,6 +106,15 @@ void SelectionTree::addBranch(Move* moveToAdd, int currentTabIndex, SelectionTre
 	}
 }
 
+<<<<<<< HEAD
+=======
+
+Node::Node(Move* element, SelectionTree::Node* parent)
+{
+
+}
+
+>>>>>>> refs/remotes/origin/master
 Move* SelectionTree::getBestMove()
 {
 	Move* bestMove = nullptr;
